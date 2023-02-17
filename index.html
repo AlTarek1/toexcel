@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+    <script src="table2excel.js"></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="inputs">
+        <input id="first" type="text" placeholder="First Name" />
+        <input id="last" type="text" placeholder="Last Name" />
+        <input id="code" type="text" placeholder="Code" />
+        <input id="phone" type="text" placeholder="Phone Number" />
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Code</th>
+            <th>Phone Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="firstt"></td>
+            <td class="lastt"></td>
+            <td class="codet"></td>
+            <td class="phonet"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button>Export As Excel</button>
+    </div>
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        var table2excel = new Table2Excel();
+        table2excel.export(document.querySelectorAll("table"));
+      });
+    </script>
+  </body>
+</html>
